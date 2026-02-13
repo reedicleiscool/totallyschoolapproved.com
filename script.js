@@ -177,11 +177,27 @@ function createGameCard(game) {
   const card = document.createElement("div");
   card.className = "game-card";
 
-  card.innerHTML = `
-    <h3>${game.name}</h3>
-    <button class="play-btn" onclick="window.open('${game.url}', '_blank')">Play</button>
-    <button onclick="addFavorite('${game.name}')">⭐</button>
-  `;
+  const title = document.createElement('h3');
+  title.textContent = game.name;
+  card.appendChild(title);
+
+  // thumbnail
+  const thumb = document.createElement('img');
+  const placeholder = `https://via.placeholder.com/300x150?text=${encodeURIComponent(game.name)}`;
+  thumb.src = game.image || placeholder;
+  thumb.alt = game.name + ' thumbnail';
+  card.appendChild(thumb);
+
+  const playBtn = document.createElement('button');
+  playBtn.className = 'play-btn';
+  playBtn.textContent = 'Play';
+  playBtn.addEventListener('click', () => window.open(game.url, '_blank'));
+  card.appendChild(playBtn);
+
+  const favBtn = document.createElement('button');
+  favBtn.textContent = '⭐';
+  favBtn.addEventListener('click', () => addFavorite(game.name));
+  card.appendChild(favBtn);
 
   return card;
 }

@@ -1,0 +1,4 @@
+/*
+  # WARNING: This allows framing from any origin. Replace * with a specific origin for better security.
+  Content-Security-Policy: frame-ancestors *
+  X-Frame-Options:
