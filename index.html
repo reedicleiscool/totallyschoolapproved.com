@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>totallyschoolapproved.com</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎮 totallyschoolapproved.com</h1>
+  <div class="header-buttons">
+    <button onclick="openTab('games')">Games</button>
+    <button onclick="openTab('favorites')">Favorites</button>
+    <button onclick="openTab('control')">Control Panel</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- GAMES TAB -->
+  <section id="games" class="tab active">
+    <div class="game-grid" id="gameGrid"></div>
+  </section>
+
+  <!-- FAVORITES TAB -->
+  <section id="favorites" class="tab">
+    <h2>⭐ Your Favorites</h2>
+    <div class="game-grid" id="favoritesGrid"></div>
+  </section>
+
+  <!-- CONTROL PANEL -->
+  <section id="control" class="tab">
+    <h2>⚙️ Control Panel</h2>
+
+    <div class="control-group">
+      <label>Theme:</label>
+      <select onchange="changeTheme(this.value)">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="neon">Neon</option>
+        <option value="retro">Retro</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label>
+        <input type="checkbox" id="animationsToggle" checked onchange="toggleAnimations()">
+        Enable Animations
+      </label>
+    </div>
+
+    <div class="control-group">
+      <button onclick="resetSettings()">Reset All Settings</button>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

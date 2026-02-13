@@ -1,0 +1,94 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+  --card: #fff;
+  --accent: #4CAF50;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+header {
+  padding: 15px;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-buttons button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 6px;
+}
+
+.tab {
+  display: none;
+  padding: 20px;
+}
+
+.tab.active {
+  display: block;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.game-card {
+  background: var(--card);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+button.play-btn {
+  margin-top: 5px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* DARK THEME */
+.dark {
+  --bg: #121212;
+  --text: #f4f4f4;
+  --card: #1f1f1f;
+  --accent: #bb86fc;
+}
+
+/* NEON THEME */
+.neon {
+  --bg: #000;
+  --text: #39ff14;
+  --card: #111;
+  --accent: #ff00ff;
+}
+
+/* RETRO THEME */
+.retro {
+  --bg: #fdf6e3;
+  --text: #073642;
+  --card: #eee8d5;
+  --accent: #b58900;
+}
