@@ -157,13 +157,19 @@ const games = [
 
 function loadGames() {
   const grid = document.getElementById("gameGrid");
+  if (!grid) {
+    console.error("gameGrid element not found");
+    return;
+  }
   grid.innerHTML = "";
 
+  console.log("Loading " + games.length + " games...");
   games.forEach(game => {
     const card = createGameCard(game);
     grid.appendChild(card);
   });
 
+  console.log("Games loaded successfully");
   loadFavorites();
 }
 
